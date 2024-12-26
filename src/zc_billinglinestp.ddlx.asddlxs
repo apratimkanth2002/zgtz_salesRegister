@@ -1,0 +1,327 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'BillingLines', 
+    typeNamePlural: 'BillingLiness', 
+    title: {
+      type: #STANDARD, 
+      label: 'BillingLines', 
+      value: 'Billingdocumentitem'
+    }
+  }, 
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'Billingdocumentitem', 
+      direction: #DESC
+    } ], 
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
+annotate view ZC_BillingLinesTP with
+{
+  @UI.facet: [ {
+    id: 'idBillingLines', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'BillingLines', 
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #HIGH, 
+    label: 'Bukrs'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Bukrs'
+  } ]
+  Bukrs;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'Fiscalyearvalue'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Fiscalyearvalue'
+  } ]
+  Fiscalyearvalue;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #HIGH, 
+    label: 'Billingdocument'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Billingdocument'
+  } ]
+  Billingdocument;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #HIGH, 
+    label: 'Billingdocumentitem'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Billingdocumentitem'
+  } ]
+  Billingdocumentitem;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #HIGH, 
+    label: 'Billingdocumentdate'
+  } ]
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Billingdocumentdate'
+  } ]
+  Billingdocumentdate;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #HIGH, 
+    label: 'Product'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Product'
+  } ]
+  Product;
+  
+  @UI.lineItem: [ {
+    position: 70 , 
+    importance: #HIGH, 
+    label: 'Materialdescription'
+  } ]
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Materialdescription'
+  } ]
+  Materialdescription;
+  
+  @UI.lineItem: [ {
+    position: 80 , 
+    importance: #HIGH, 
+    label: 'Netamount'
+  } ]
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Netamount'
+  } ]
+  Netamount;
+  
+  @UI.lineItem: [ {
+    position: 90 , 
+    importance: #HIGH, 
+    label: 'Taxamount'
+  } ]
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Taxamount'
+  } ]
+  Taxamount;
+  
+  @UI.lineItem: [ {
+    position: 100 , 
+    importance: #HIGH, 
+    label: 'Mrp'
+  } ]
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Mrp'
+  } ]
+  Mrp;
+  
+  @UI.lineItem: [ {
+    position: 110 , 
+    importance: #HIGH, 
+    label: 'Itemrate'
+  } ]
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'Itemrate'
+  } ]
+  Itemrate;
+  
+  @UI.lineItem: [ {
+    position: 120 , 
+    importance: #HIGH, 
+    label: 'Igst'
+  } ]
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'Igst'
+  } ]
+  Igst;
+  
+  @UI.lineItem: [ {
+    position: 130 , 
+    importance: #HIGH, 
+    label: 'Sgst'
+  } ]
+  @UI.identification: [ {
+    position: 130 , 
+    label: 'Sgst'
+  } ]
+  Sgst;
+  
+  @UI.lineItem: [ {
+    position: 140 , 
+    importance: #HIGH, 
+    label: 'Cgst'
+  } ]
+  @UI.identification: [ {
+    position: 140 , 
+    label: 'Cgst'
+  } ]
+  Cgst;
+  
+  @UI.lineItem: [ {
+    position: 150 , 
+    importance: #HIGH, 
+    label: 'Roundoff'
+  } ]
+  @UI.identification: [ {
+    position: 150 , 
+    label: 'Roundoff'
+  } ]
+  Roundoff;
+  
+  @UI.lineItem: [ {
+    position: 160 , 
+    importance: #HIGH, 
+    label: 'Manditax'
+  } ]
+  @UI.identification: [ {
+    position: 160 , 
+    label: 'Manditax'
+  } ]
+  Manditax;
+  
+  @UI.lineItem: [ {
+    position: 170 , 
+    importance: #HIGH, 
+    label: 'Mandicess'
+  } ]
+  @UI.identification: [ {
+    position: 170 , 
+    label: 'Mandicess'
+  } ]
+  Mandicess;
+  
+  @UI.lineItem: [ {
+    position: 180 , 
+    importance: #HIGH, 
+    label: 'Discount'
+  } ]
+  @UI.identification: [ {
+    position: 180 , 
+    label: 'Discount'
+  } ]
+  Discount;
+  
+  @UI.lineItem: [ {
+    position: 190 , 
+    importance: #HIGH, 
+    label: 'Totalamount'
+  } ]
+  @UI.identification: [ {
+    position: 190 , 
+    label: 'Totalamount'
+  } ]
+  Totalamount;
+  
+  @UI.lineItem: [ {
+    position: 200 , 
+    importance: #HIGH, 
+    label: 'Exempted'
+  } ]
+  @UI.identification: [ {
+    position: 200 , 
+    label: 'Exempted'
+  } ]
+  Exempted;
+  
+  @UI.lineItem: [ {
+    position: 210 , 
+    importance: #HIGH, 
+    label: 'Rateigst'
+  } ]
+  @UI.identification: [ {
+    position: 210 , 
+    label: 'Rateigst'
+  } ]
+  Rateigst;
+  
+  @UI.lineItem: [ {
+    position: 220 , 
+    importance: #HIGH, 
+    label: 'Ratecgst'
+  } ]
+  @UI.identification: [ {
+    position: 220 , 
+    label: 'Ratecgst'
+  } ]
+  Ratecgst;
+  
+  @UI.lineItem: [ {
+    position: 230 , 
+    importance: #HIGH, 
+    label: 'Ratesgst'
+  } ]
+  @UI.identification: [ {
+    position: 230 , 
+    label: 'Ratesgst'
+  } ]
+  Ratesgst;
+  
+  @UI.lineItem: [ {
+    position: 240 , 
+    importance: #HIGH, 
+    label: 'Discountrate'
+  } ]
+  @UI.identification: [ {
+    position: 240 , 
+    label: 'Discountrate'
+  } ]
+  Discountrate;
+  
+  @UI.lineItem: [ {
+    position: 250 , 
+    importance: #HIGH, 
+    label: 'Billingqtyinsku'
+  } ]
+  @UI.identification: [ {
+    position: 250 , 
+    label: 'Billingqtyinsku'
+  } ]
+  Billingqtyinsku;
+  
+  @UI.lineItem: [ {
+    position: 260 , 
+    importance: #HIGH, 
+    label: 'Ratetcs'
+  } ]
+  @UI.identification: [ {
+    position: 260 , 
+    label: 'Ratetcs'
+  } ]
+  Ratetcs;
+  
+  @UI.lineItem: [ {
+    position: 270 , 
+    importance: #HIGH, 
+    label: 'Tcs'
+  } ]
+  @UI.identification: [ {
+    position: 270 , 
+    label: 'Tcs'
+  } ]
+  Tcs;
+}

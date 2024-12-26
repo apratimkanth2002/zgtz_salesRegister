@@ -1,0 +1,16 @@
+interface;
+
+define behavior for ZI_BillingDocTP alias BillingDoc
+use etag
+{
+  use delete;
+
+  use association _BillingLines;
+}
+
+define behavior for ZI_BillingLinesTP alias BillingLines
+use etag
+{
+
+  use association _BillingDoc;
+}

@@ -1,0 +1,88 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'BillingDoc', 
+    typeNamePlural: 'BillingDocs', 
+    title: {
+      type: #STANDARD, 
+      label: 'BillingDoc', 
+      value: 'Bukrs'
+    }
+  }, 
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'Bukrs', 
+      direction: #DESC
+    } ], 
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
+annotate view ZC_BillingDocTP with
+{
+  @UI.facet: [ {
+    id: 'idCollection', 
+    type: #COLLECTION, 
+    label: 'BillingDoc', 
+    position: 10 
+  }, 
+  {
+    id: 'idIdentification', 
+    parentId: 'idCollection', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'General Information', 
+    position: 20 
+  }, 
+  {
+    id: 'idBillingLines', 
+    type: #LINEITEM_REFERENCE, 
+    label: 'BillingLines', 
+    position: 30 , 
+    targetElement: '_BillingLines'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #HIGH, 
+    label: 'Bukrs'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Bukrs'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  Bukrs;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'Fiscalyearvalue'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Fiscalyearvalue'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  Fiscalyearvalue;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #HIGH, 
+    label: 'Billingdocument'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Billingdocument'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Billingdocument;
+  
+  @UI.hidden: true
+  Creationdatetime;
+}

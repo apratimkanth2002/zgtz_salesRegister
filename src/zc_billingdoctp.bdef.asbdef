@@ -1,0 +1,17 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_BillingDocTP alias BillingDoc
+use etag
+{
+  use delete;
+
+  use association _BillingLines;
+}
+
+define behavior for ZC_BillingLinesTP alias BillingLines
+use etag
+{
+
+  use association _BillingDoc;
+}

@@ -1,0 +1,82 @@
+managed;
+strict ( 2 );
+define behavior for ZR_BillingDocTP alias BillingDoc
+implementation in class ZBP_R_BillingDocTP unique
+persistent table ZBILLINGPROC
+etag master Creationdatetime
+lock master
+authorization master( global )
+
+{
+  field ( readonly )
+   Creationdatetime;
+
+  field ( readonly : update )
+   Bukrs,
+   Fiscalyearvalue,
+   Billingdocument;
+
+  create;
+  delete;
+
+  mapping for ZBILLINGPROC
+  {
+    Bukrs = BUKRS;
+    Fiscalyearvalue = FISCALYEARVALUE;
+    Billingdocument = BILLINGDOCUMENT;
+    Creationdatetime = CREATIONDATETIME;
+  }
+
+  association _BillingLines {  }
+}
+
+define behavior for ZR_BillingLinesTP alias BillingLines
+implementation in class ZBP_R_BillingLinesTP unique
+persistent table ZBILLINGLINES
+etag dependent by _BillingDoc
+lock dependent by _BillingDoc
+authorization dependent by _BillingDoc
+
+{
+  field ( readonly )
+   Bukrs,
+   Fiscalyearvalue,
+   Billingdocument;
+
+  field ( readonly : update )
+   Billingdocumentitem;
+
+
+  mapping for ZBILLINGLINES
+  {
+    Bukrs = BUKRS;
+    Fiscalyearvalue = FISCALYEARVALUE;
+    Billingdocument = BILLINGDOCUMENT;
+    Billingdocumentitem = BILLINGDOCUMENTITEM;
+    Billingdocumentdate = BILLINGDOCUMENTDATE;
+    Product = PRODUCT;
+    Materialdescription = MATERIALDESCRIPTION;
+    Netamount = NETAMOUNT;
+    Taxamount = TAXAMOUNT;
+    Mrp = MRP;
+    Itemrate = ITEMRATE;
+    Igst = IGST;
+    Sgst = SGST;
+    Cgst = CGST;
+    Roundoff = ROUNDOFF;
+    Manditax = MANDITAX;
+    Mandicess = MANDICESS;
+    Discount = DISCOUNT;
+    Totalamount = TOTALAMOUNT;
+    Exempted = EXEMPTED;
+    Rateigst = RATEIGST;
+    Ratecgst = RATECGST;
+    Ratesgst = RATESGST;
+    Discountrate = DISCOUNTRATE;
+    Billingqtyinsku = BILLINGQTYINSKU;
+    Ratetcs = RATETCS;
+    Tcs = TCS;
+  }
+
+  association _BillingDoc;
+}
